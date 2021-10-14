@@ -20,13 +20,14 @@
     </div>
     <script>
         myTime= undefined;
+        u=3
         function recordReact() {
             myTime = Date.now();
             console.log(myTime);
         }
         function startTime(){
-            for (let i = 0; i <= 3; i++) {
-                j = (3 - i) * 1000;
+            for (let i = 0; i <= u; i++) {
+                j = (u - i) * 1000;
                 setTimeout(() => {
                     document.getElementById("countdown").innerHTML = i;
                 }, j)
@@ -42,7 +43,8 @@
                     document.getElementById("target").innerHTML = "Time was " + differnce + " ms"
                     myTime = undefined
                 }
-            },3000)
+            },u*1000)
+            u=Math.round(Math.random() * (10 - 2) + 0);
         }
     </script>
   
